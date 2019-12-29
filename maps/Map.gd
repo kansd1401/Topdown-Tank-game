@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	set_camera_limits()
+	Input.set_custom_mouse_cursor(load("res://assets/UI/crossair_red.png"), Input.CURSOR_ARROW, Vector2(16,16))
 	
 func set_camera_limits():
 	var map_limits = $Ground.get_used_rect()
@@ -15,3 +16,4 @@ func _on_Tank_shoot(bullet, _position, _direction):
 	var b = bullet.instance()
 	add_child(b)
 	b.start(_position, _direction)
+
